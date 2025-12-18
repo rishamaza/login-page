@@ -1,17 +1,18 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 void maxcheck(int arr[],int n){
-    int max=arr[0];
-    int secmax=arr[0];
-    for(int i=1;i<n;i++){
+    int max=INT_MIN;
+    int secmax=INT_MIN;
+    if(n<2) cout<<"Need more elements"<<endl;
+    for(int i=0;i<n;i++){
         if(arr[i]>max){
+            secmax=max;
             max= arr[i];
-        }
-    }for(int i=1;i<n;i++){
-            if(arr[i]>secmax && arr[i]!=max){
+        }else if(arr[i]>secmax && arr[i]!=max){
                 secmax=arr[i];
             }
-        }
+    }
     cout<<"Max element is "<<max<<endl<<"Second max is "<<secmax<<endl;
 }
 int main() {
