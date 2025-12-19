@@ -1,11 +1,12 @@
 #include <iostream>
 using namespace std;
 int linearsearch(int arr[], int n, int key){
+    int count=0;
     for(int i=0;i<n;i++){
         if(arr[i]==key){
-            return i;
+            count++;
         }
-    }return -1;
+    }return count;
 }
 int main(){
     int n;
@@ -15,8 +16,9 @@ int main(){
         cin>>arr[i];
     }
     int key;
+    cout<<"ENTER NO. TO SEARCH"<<endl;
     cin>>key;
-    int index=linearsearch(arr,n,key);
-    cout<<endl<<"INDEX IS "<<index<<endl;
+    int count=linearsearch(arr,n,key);
+    cout<<count<<" times"<< endl;
     return 0;
 }
