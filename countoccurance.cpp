@@ -34,7 +34,7 @@ int countOccurance(int arr[],int n,int key){
     int first=firstOccurance(arr,n,key);
     if(first==-1) return 0;
     int last=lastOccurance(arr,n,key);
-    return last-first+1;
+    return (last-first)+1;
 }
 int main(){
     int n;
